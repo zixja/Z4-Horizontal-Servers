@@ -1,0 +1,47 @@
+/**
+ * @name Z4 Horizontal Server List
+ * @author Zix / T2Development
+ * @version 1.0.0
+ * @description Moves Discord servers from the left side to a horizontal bar across the top.
+ */
+
+/* Horizontal Server List base */
+@import url("https://discordstyles.github.io/HorizontalServerList/HorizontalServerList.css");
+
+:root {
+    /* Server direction */
+    --HSL-server-direction: column;
+
+    /* Server alignment: flex-start | center | flex-end */
+    --HSL-server-alignment: flex-start;
+
+    /* Space above icons */
+    --HSL-top-padding: 10px;
+}
+
+/* Smooth server icon hover */
+[class*="guilds"] [class*="wrapper"] {
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease;
+}
+
+[class*="guilds"] [class*="wrapper"]:hover {
+    transform: scale(1.08);
+}
+
+/* Cleaner top server bar */
+[class*="guilds"] {
+    background: var(--background-base-lowest, #111214);
+}
+
+/* Slight separation between server bar and Discord */
+[class*="guilds"]::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+}
